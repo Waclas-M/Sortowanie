@@ -1,4 +1,4 @@
-def Max(list):
+def Max_min(list):
     max_number=list[0]
     min_number=list[0]
     for x in range(len(list)):
@@ -11,5 +11,5 @@ def Max(list):
     return max_number,min_number
 
 
-print(Max([12,2,12,30,60]))
+
 
