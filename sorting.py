@@ -27,10 +27,28 @@ def sorting(list):
             i+=1
             k+=1
 
-print(sorting([9,5,2,7,5,1,10,20,30,40]))
+
+def next_sorting(list):
+    mniejsze = []
+    rowne = []
+    wieksze = []
+    if len(list) > 1:
+        piwot = list[len(list)//2]
+        for x in list:
+            if x > piwot:
+                wieksze.append(x)
+            elif x == piwot:
+                rowne.append(x)
+            else:
+                mniejsze.append(x)
+        return next_sorting(mniejsze) + rowne + next_sorting(wieksze)
+    else:
+        return list
+print(next_sorting([5,6,4,2,1]))
 
 
 
-# 1,2 4,6,5
-#
-#
+# 5,6,4,2,1
+# 5,6,4 | 2,1
+# 2,1,4 | 5,6
+# 1,2,4 | 5,6
